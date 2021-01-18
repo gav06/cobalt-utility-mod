@@ -12,12 +12,12 @@ public class Xray extends Module {
         super("Xray", "lets you only see ores", Category.RENDER);
 
         xray_blocks.add(Block.getBlockById(56));
-        //xray_blocks.add(Block.getBlockById(129));
-        //xray_blocks.add(Block.getBlockById(14));
-        //xray_blocks.add(Block.getBlockById(15));
-        //xray_blocks.add(Block.getBlockById(21));
-        //xray_blocks.add(Block.getBlockById(153));
-        //xray_blocks.add(Block.getBlockById(73));
+        xray_blocks.add(Block.getBlockById(129));
+        xray_blocks.add(Block.getBlockById(14));
+        xray_blocks.add(Block.getBlockById(15));
+        xray_blocks.add(Block.getBlockById(21));
+        xray_blocks.add(Block.getBlockById(153));
+        xray_blocks.add(Block.getBlockById(73));
     }
 
     public void onEnable() {
