@@ -1,5 +1,6 @@
 package me.gav06.cobalt.mixin;
 
+
 import me.gav06.cobalt.Cobalt;
 import net.minecraft.client.renderer.EntityRenderer;
 import org.spongepowered.asm.mixin.Mixin;
