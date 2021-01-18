@@ -1,0 +1,19 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "me.gav06.cobalt.mixin",
+  "mixins": [
+    "MixinMinecraft",
+    "MixinGuiMainMenu",
+    "MixinEntityRenderer",
+    "MixinGuiBossOverlay",
+    "MixinLayerBipedArmor",
+    "MixinGuiNewChat",
+    "MixinBlockLiquid",
+    "MixinBlockSoulSand",
+    "MixinRenderManager",
+    "MixinPlayerOverlay",
+    "MixinBlock"
+  ],
+  "client": [],
+  "server": []
+}
