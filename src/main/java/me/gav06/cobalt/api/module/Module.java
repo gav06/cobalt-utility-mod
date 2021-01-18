@@ -47,4 +47,8 @@ public class Module {
     public boolean nullCheck() {
         return mc.player == null || mc.world == null;
     }
+
+    public Category getCategory() {
+        return c;
+    }
 }

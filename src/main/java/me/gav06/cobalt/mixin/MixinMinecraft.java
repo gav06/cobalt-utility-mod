@@ -9,6 +9,10 @@ import org.lwjgl.opengl.PixelFormat;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Minecraft.class)
 public abstract class MixinMinecraft {
@@ -40,6 +44,11 @@ public abstract class MixinMinecraft {
             }
             Display.create();
         }
+    }
+
+    @Inject(method = "shutdownMinecraftApplet", at = @At("HEAD"))
+    public void shutdownMinecraftAppletHook(CallbackInfo ci) {
+        
     }
 
     @Shadow

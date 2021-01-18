@@ -30,11 +30,11 @@ public class ModList extends Module {
 
         for (Module m : Cobalt.moduleManager.getSortedMods()) {
             if (m.getState()) {
-                if (m.getName().equalsIgnoreCase("arraylist") || m.getName().equalsIgnoreCase("clickgui"))
-                    return;
+                if (!m.getCategory().equals(Category.HUD)) {
 
-                Cobalt.font.drawStringWithShadow(m.getName(), sr.getScaledWidth() - Cobalt.font.getStringWidth(m.getName()) - 3, 1 + offsetY, Util.getRGBWave(8, 1, .5f, 40 * offsetY));
-                offsetY += Cobalt.font.getHeight() + 1;
+                    Cobalt.font.drawStringWithShadow(m.getName(), sr.getScaledWidth() - Cobalt.font.getStringWidth(m.getName()) - 3, 1 + offsetY, Util.getRGBWave(8, 1, .5f, 40 * offsetY));
+                    offsetY += Cobalt.font.getHeight() + 1;
+                }
             }
         }
     }

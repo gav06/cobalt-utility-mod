@@ -1,14 +1,16 @@
 package me.gav06.cobalt.api.module;
 
 import me.gav06.cobalt.Cobalt;
+import me.gav06.cobalt.client.mods.combat.AutoTotem;
 import me.gav06.cobalt.client.mods.hud.ModList;
+import me.gav06.cobalt.client.mods.hud.NearestPlayer;
+import me.gav06.cobalt.client.mods.hud.Position;
 import me.gav06.cobalt.client.mods.hud.Watermark;
+import me.gav06.cobalt.client.mods.movement.NoFall;
 import me.gav06.cobalt.client.mods.movement.NoSlow;
+import me.gav06.cobalt.client.mods.movement.Sprint;
 import me.gav06.cobalt.client.mods.render.*;
-import me.gav06.cobalt.client.mods.world.BetterPortals;
-import me.gav06.cobalt.client.mods.world.FastPlace;
-import me.gav06.cobalt.client.mods.world.LiquidInteract;
-import me.gav06.cobalt.client.mods.world.NoBreakDelay;
+import me.gav06.cobalt.client.mods.world.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,22 +33,30 @@ public class ModuleManager {
         addMod(new NoRender());
         addMod(new AntiPotion());
         addMod(new AntiOverlay());
-        addMod(new Xray()); //- WIP
+        addMod(new BlockOutline());
+        //addMod(new Xray()); //- WIP
 
         //combat
+        addMod(new AutoTotem());
 
         //movement
         addMod(new NoSlow());
+        addMod(new NoFall());
+        addMod(new Sprint());
 
         //world
         addMod(new LiquidInteract());
         addMod(new FastPlace());
         addMod(new NoBreakDelay());
         addMod(new BetterPortals());
+        addMod(new Reach());
+        addMod(new FakePlayer());
 
         //hud
         addMod(new Watermark());
         addMod(new ModList());
+        addMod(new Position());
+        //addMod(new NearestPlayer()); - currently broken
     }
 
     public Module getModuleByName(String name) {

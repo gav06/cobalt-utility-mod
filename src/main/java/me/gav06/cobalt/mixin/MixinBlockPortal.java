@@ -13,10 +13,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(BlockPortal.class)
 public class MixinBlockPortal {
 
-    //@Inject(method = "", at = @At("HEAD"), cancellable = true)
-    //public void getCollisionBoundingBoxHook(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, CallbackInfoReturnable callbackInfoReturnable) {
-    //    if (Cobalt.moduleManager.getModuleByName("BetterPortals").getState()) {
-    //        callbackInfoReturnable.cancel();
-    //    }
-    //}
+    @Inject(method = "getCollisionBoundingBox", at = @At("HEAD"), cancellable = true)
+    public void getCollisionBoundingBoxHook(IBlockState blockState, IBlockAccess worldIn, BlockPos pos, CallbackInfoReturnable callbackInfoReturnable) {
+        if (Cobalt.moduleManager.getModuleByName("BetterPortals").getState()) {
+            callbackInfoReturnable.cancel();
+        }
+    }
 }
