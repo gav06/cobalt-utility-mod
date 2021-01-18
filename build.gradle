@@ -12,6 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
+
 version = mod_version
 group = mod_group
 archivesBaseName = mod_id
@@ -43,6 +44,7 @@ dependencies {
         exclude module: 'commons-io'
         exclude module: 'gson'
     }
+    compile 'com.esotericsoftware:reflectasm:1.11.9'
 }
 
 processResources {
