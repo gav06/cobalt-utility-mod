@@ -12,7 +12,9 @@
     "MixinBlockSoulSand",
     "MixinRenderManager",
     "MixinPlayerOverlay",
-    "MixinBlock"
+    "MixinBlockPortal",
+    "MixinRenderGlobal",
+    "MixinPlayerControllerMP"
   ],
   "client": [],
   "server": []
