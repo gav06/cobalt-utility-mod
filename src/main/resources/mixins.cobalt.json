@@ -14,7 +14,8 @@
     "MixinPlayerOverlay",
     "MixinBlockPortal",
     "MixinRenderGlobal",
-    "MixinPlayerControllerMP"
+    "MixinPlayerControllerMP",
+    "MixinBlock"
   ],
   "client": [],
   "server": []

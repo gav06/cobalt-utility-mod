@@ -6,6 +6,7 @@ import me.gav06.cobalt.client.mods.hud.ModList;
 import me.gav06.cobalt.client.mods.hud.NearestPlayer;
 import me.gav06.cobalt.client.mods.hud.Position;
 import me.gav06.cobalt.client.mods.hud.Watermark;
+import me.gav06.cobalt.client.mods.movement.ElytraFly;
 import me.gav06.cobalt.client.mods.movement.NoFall;
 import me.gav06.cobalt.client.mods.movement.NoSlow;
 import me.gav06.cobalt.client.mods.movement.Sprint;
@@ -34,7 +35,7 @@ public class ModuleManager {
         addMod(new AntiPotion());
         addMod(new AntiOverlay());
         addMod(new BlockOutline());
-        //addMod(new Xray()); //- WIP
+        addMod(new Xray()); //- WIP
 
         //combat
         addMod(new AutoTotem());
@@ -43,6 +44,7 @@ public class ModuleManager {
         addMod(new NoSlow());
         addMod(new NoFall());
         addMod(new Sprint());
+        addMod(new ElytraFly());
 
         //world
         addMod(new LiquidInteract());

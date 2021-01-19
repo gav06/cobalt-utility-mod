@@ -17,11 +17,11 @@ public class MixinBlock {
 
     @Inject(method = "shouldSideBeRendered",at = @At("HEAD"), cancellable = true)
     public void shouldSideBeRenderedHook(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side, CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
-        if (Cobalt.moduleManager.getModuleByName("Xray").getState()) {
-            for (Block block : Xray.xray_blocks) {
-                if (!blockState.getBlock().equals(block)) {
-                    callbackInfoReturnable.cancel();
-                }
+        if (Xray.xray_bool) {
+            if (!Xray.xray_blocks.contains(blockState.getBlock())) {
+                callbackInfoReturnable.cancel();
+            } else {
+                callbackInfoReturnable.setReturnValue(true);
             }
         }
     }
