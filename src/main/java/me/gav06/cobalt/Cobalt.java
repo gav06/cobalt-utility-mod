@@ -2,6 +2,7 @@ package me.gav06.cobalt;
 
 import me.gav06.cobalt.api.font.CFontRenderer;
 import me.gav06.cobalt.api.module.ModuleManager;
+import me.gav06.cobalt.api.util.FileHandler;
 import me.gav06.cobalt.client.gui.ClickGui;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +26,8 @@ public class Cobalt {
     public void onPreInit(FMLPreInitializationEvent event) {
         moduleManager = new ModuleManager();
 
+        FileHandler.setup();
+        FileHandler.loadModulesFromFile();
         MinecraftForge.EVENT_BUS.register(this);
     }
 

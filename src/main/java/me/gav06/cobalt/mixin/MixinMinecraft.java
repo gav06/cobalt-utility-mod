@@ -1,59 +1,17 @@
 package me.gav06.cobalt.mixin;
 
-import me.gav06.cobalt.Cobalt;
+import me.gav06.cobalt.api.util.FileHandler;
 import net.minecraft.client.Minecraft;
-import org.apache.logging.log4j.Logger;
-import org.lwjgl.LWJGLException;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.PixelFormat;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Minecraft.class)
 public abstract class MixinMinecraft {
 
-    @Final
-    @Shadow
-    public static Logger LOGGER;
-
-    @Shadow
-    public boolean fullscreen;
-
-    /**
-     * @author
-     * MouseOwO
-     */
-    @Overwrite
-    public void createDisplay() throws LWJGLException {
-        Display.setResizable(true);
-        Display.setTitle(Cobalt.NAME_VERSION);
-        try {
-            Display.create((new PixelFormat()).withDepthBits(24));
-        } catch (LWJGLException lwjglexception) {
-            LOGGER.error("Couldn't set pixel format", lwjglexception);
-            try {
-                Thread.sleep(1000L);
-            } catch (InterruptedException e) {
-            }
-            if (this.fullscreen) {
-                this.updateDisplayMode();
-            }
-            Display.create();
-        }
-    }
-
     @Inject(method = "shutdownMinecraftApplet", at = @At("HEAD"))
     public void shutdownMinecraftAppletHook(CallbackInfo ci) {
-        
-    }
-
-    @Shadow
-    private void updateDisplayMode() {
+        FileHandler.saveModulesToFile();
     }
 }

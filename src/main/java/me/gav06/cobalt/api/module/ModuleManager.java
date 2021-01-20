@@ -2,6 +2,7 @@ package me.gav06.cobalt.api.module;
 
 import me.gav06.cobalt.Cobalt;
 import me.gav06.cobalt.client.mods.combat.AutoTotem;
+import me.gav06.cobalt.client.mods.combat.KillAura;
 import me.gav06.cobalt.client.mods.hud.ModList;
 import me.gav06.cobalt.client.mods.hud.NearestPlayer;
 import me.gav06.cobalt.client.mods.hud.Position;
@@ -38,6 +39,7 @@ public class ModuleManager {
         addMod(new Xray()); //- WIP
 
         //combat
+        addMod(new KillAura());
         addMod(new AutoTotem());
 
         //movement
@@ -59,6 +61,7 @@ public class ModuleManager {
         addMod(new ModList());
         addMod(new Position());
         //addMod(new NearestPlayer()); - currently broken
+
     }
 
     public Module getModuleByName(String name) {
@@ -104,5 +107,14 @@ public class ModuleManager {
             }
             return 0;
         }
+    }
+
+    public ArrayList<String> getModulesByName() {
+        ArrayList<String> arr = new ArrayList<>();
+        for (Module m : modules) {
+            arr.add(m.getName());
+        }
+
+        return arr;
     }
 }

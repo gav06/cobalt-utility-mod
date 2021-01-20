@@ -20,6 +20,9 @@ public class MixinBlock {
         if (Xray.xray_bool) {
             if (!Xray.xray_blocks.contains(blockState.getBlock())) {
                 callbackInfoReturnable.cancel();
+                //if (!blockState.getBlock().fullBlock) {
+                //    blockState.
+                //}
             } else {
                 callbackInfoReturnable.setReturnValue(true);
             }
