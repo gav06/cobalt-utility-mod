@@ -1,5 +1,6 @@
 package me.gav06.cobalt.api.module;
 
+import me.gav06.cobalt.api.event.Event;
 import net.minecraft.client.Minecraft;
 
 public class Module {
@@ -33,6 +34,10 @@ public class Module {
     }
 
     public void onDisable() {
+    }
+
+    public void onEvent(Event e) {
+
     }
 
     public void toggle() {

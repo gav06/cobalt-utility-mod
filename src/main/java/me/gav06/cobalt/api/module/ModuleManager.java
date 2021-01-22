@@ -1,16 +1,9 @@
 package me.gav06.cobalt.api.module;
 
 import me.gav06.cobalt.Cobalt;
-import me.gav06.cobalt.client.mods.combat.AutoTotem;
-import me.gav06.cobalt.client.mods.combat.KillAura;
-import me.gav06.cobalt.client.mods.hud.ModList;
-import me.gav06.cobalt.client.mods.hud.NearestPlayer;
-import me.gav06.cobalt.client.mods.hud.Position;
-import me.gav06.cobalt.client.mods.hud.Watermark;
-import me.gav06.cobalt.client.mods.movement.ElytraFly;
-import me.gav06.cobalt.client.mods.movement.NoFall;
-import me.gav06.cobalt.client.mods.movement.NoSlow;
-import me.gav06.cobalt.client.mods.movement.Sprint;
+import me.gav06.cobalt.client.mods.combat.*;
+import me.gav06.cobalt.client.mods.hud.*;
+import me.gav06.cobalt.client.mods.movement.*;
 import me.gav06.cobalt.client.mods.render.*;
 import me.gav06.cobalt.client.mods.world.*;
 
@@ -25,24 +18,34 @@ public class ModuleManager {
         modules.add(m);
     }
 
+    public ArrayList<Module> getModuleList() {
+        return modules;
+    }
+
     public ModuleManager() {
         //render
+        addMod(new GlowingESP());
         addMod(new Fullbright());
         addMod(new NoHurtCam());
         addMod(new NoBossbar());
         addMod(new NoArmor());
         addMod(new ClearChatBox());
         addMod(new NoRender());
-        addMod(new AntiPotion());
+        //addMod(new AntiPotion());
         addMod(new AntiOverlay());
         addMod(new BlockOutline());
         addMod(new Xray()); //- WIP
 
         //combat
+        addMod(new Criticals());
         addMod(new KillAura());
         addMod(new AutoTotem());
+        addMod(new FastXP());
 
         //movement
+        addMod(new Freecam());
+        addMod(new CreativeFly());
+        addMod(new AutoWalk());
         addMod(new NoSlow());
         addMod(new NoFall());
         addMod(new Sprint());
@@ -55,12 +58,13 @@ public class ModuleManager {
         addMod(new BetterPortals());
         addMod(new Reach());
         addMod(new FakePlayer());
+        addMod(new NoRotate());
 
         //hud
         addMod(new Watermark());
         addMod(new ModList());
         addMod(new Position());
-        //addMod(new NearestPlayer()); - currently broken
+        addMod(new TabGUI());
 
     }
 

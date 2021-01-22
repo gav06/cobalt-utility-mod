@@ -20,7 +20,7 @@ public class MixinPlayerOverlay {
 
     @Inject(method = "renderPotionEffects", at = @At("HEAD"), cancellable = true)
     protected void renderPotionEffectsHook(ScaledResolution scaledRes, CallbackInfo callbackInfo) {
-        if (Cobalt.moduleManager.getModuleByName("AntiPotion").getState()){
+        if (Cobalt.moduleManager.getModuleByName("AntiOverlay").getState()){
             callbackInfo.cancel();
         }
     }

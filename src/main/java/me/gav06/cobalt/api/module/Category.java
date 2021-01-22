@@ -1,9 +1,9 @@
 package me.gav06.cobalt.api.module;
 
 public enum Category {
-    RENDER,
     COMBAT,
+    RENDER,
     MOVEMENT,
-    WORLD,
-    HUD;
+    HUD,
+    WORLD;
 }

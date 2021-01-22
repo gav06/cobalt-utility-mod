@@ -3,7 +3,6 @@ package me.gav06.cobalt.client.mods.movement;
 
 import me.gav06.cobalt.api.module.Category;
 import me.gav06.cobalt.api.module.Module;
-import net.b0at.api.event.Subscribe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;

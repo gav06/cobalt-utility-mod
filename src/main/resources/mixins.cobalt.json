@@ -15,7 +15,10 @@
     "MixinBlockPortal",
     "MixinRenderGlobal",
     "MixinPlayerControllerMP",
-    "MixinBlock"
+    "MixinBlock",
+    "MixinVisGraph",
+    "MixinNetworkManager",
+    "MixinEntityPlayerSP"
   ],
   "client": [],
   "server": []

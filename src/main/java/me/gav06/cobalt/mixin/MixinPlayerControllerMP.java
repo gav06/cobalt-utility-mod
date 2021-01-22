@@ -13,7 +13,7 @@ public class MixinPlayerControllerMP {
     @Inject(method = "getBlockReachDistance", at = @At("RETURN"), cancellable = true)
     private void getReachDistanceHook(final CallbackInfoReturnable<Float> distance) {
         if (Cobalt.moduleManager.getModuleByName("Reach").getState()) {
-            distance.setReturnValue(8f);
+            distance.setReturnValue(6f);
         }
     }
 }
