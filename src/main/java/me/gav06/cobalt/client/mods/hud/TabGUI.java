@@ -121,7 +121,7 @@ public class TabGUI extends Module {
                     int xOff = 0;
 
                     if (i == index0) {
-                        xOff = 4;
+                        xOff = 6;
                     }
                     Cobalt.font.drawStringWithShadow(categories[i].toString(), 5 + xOff, 15 + offset, -1);
                     offset += 12;
@@ -144,7 +144,7 @@ public class TabGUI extends Module {
                                 Cobalt.font.getHeight() + 17 + offset_,
                                 0x90000000);
                         if (i == moduleIndex) {
-                            xOff_ = 4;
+                            xOff_ = 6;
                         } else {
                             xOff_ = 0;
                         }

@@ -32,6 +32,8 @@ public class Freecam extends Module {
 
     public void onEnable() {
         if (mc.player != null) {
+            mc.renderGlobal.loadRenderers();
+
             isRidingEntity = mc.player.getRidingEntity() != null;
 
             if (mc.player.getRidingEntity() == null) {
@@ -73,6 +75,8 @@ public class Freecam extends Module {
                 mc.player.startRiding(ridingEntity, true);
             }
         }
+
+        mc.renderGlobal.loadRenderers();
     }
 
     public void onEvent(Event e) {
